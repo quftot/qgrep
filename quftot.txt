@@ -1,0 +1,31 @@
+
+# 종속성 문제 해결
+git submodule update --init --recursive
+make
+
+# 서브모듈 버전 확인
+git submodule status
+ ebb370ca83af193212df4dcbadcc5d87bc0de2f0 extern/lz4 (v1.10.0)
+ 3a8436ac436124a57a4e22d5c8713a2d42b381d7 extern/re2 (2023-03-01)
+
+#####################################
+./qgrep init log /var/log
+./qgrep build log
+./qgrep update log
+./qgrep search log "u"
+./qgrep files log installer
+./qgrep projects
+./qgrep info log
+./qgrep watch log
+./qgrep change log
+./qgrep interactive log
+#####################################
+
+1. init을 하면 ~/.qgrep 폴더와 하위에 .cfg 확장자를 가진 파일이 생성됨
+2. build를 하면 ~/.qgrep 폴더와 하위에 .qgd, .qgf 확장자를 가진 파일이 생성됨
+3. ~/.qgrep/{project}.cfg 파일 열어서 파일 확장자 작성
+4. update
+    e.g. ./qgrep update log
+5. search
+    e.g. ./qgrep search log "failure"
+         ./qgrep search log sb\s*-
